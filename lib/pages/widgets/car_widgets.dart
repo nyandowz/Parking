@@ -15,6 +15,11 @@ class CarWidgets extends StatelessWidget {
       child: Container(
         decoration: const BoxDecoration(
           border: Border(
+            bottom: BorderSide(
+              style: BorderStyle.solid,
+              color: Colors.grey,
+              width: 3,
+            ),
             top: BorderSide(
               style: BorderStyle.solid,
               color: Colors.grey,
@@ -22,13 +27,13 @@ class CarWidgets extends StatelessWidget {
             ),
           ),
         ),
-        height: 150,
+        height: 120,
         child: Center(
           child: isParked
               ? Image.asset("assets/images/car.png")
               : InkWell(
                   child: Container(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       horizontal: 30,
                       vertical: 10,
                     ),

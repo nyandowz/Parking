@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:smart_car_parking/controller/car_controller.dart';
 import 'package:smart_car_parking/pages/widgets/car_widgets.dart';
 
 class HomePage extends StatelessWidget {
@@ -6,9 +8,26 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    CarContronller carContronller = Get.put(CarContronller());
     return Scaffold(
       appBar: AppBar(
-        title: Text("SMART CAR PARKING"),
+        backgroundColor: Colors.blue,
+        title: Text(
+          "SMART CAR PARKING",
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              carContronller.addNote();
+            },
+            icon: Icon(
+              Icons.car_repair,
+              color: Colors.white,
+              size: 30,
+            ),
+          )
+        ],
         centerTitle: true,
       ),
       body: SafeArea(
@@ -16,7 +35,7 @@ class HomePage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
-              SizedBox(height: 79),
+              SizedBox(height: 19),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -45,49 +64,21 @@ class HomePage extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 79,
+                height: 29,
               ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CarWidgets(isParked: false),
-                  SizedBox(width: 20),
-                  CarWidgets(
-                    isParked: true,
+              Container(
+                height: 600,
+                child: Obx(
+                  () => GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    children: carContronller.carData
+                        .map(
+                          (e) => CarWidgets(isParked: e.isParked),
+                        )
+                        .toList(),
                   ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CarWidgets(
-                    isParked: false,
-                  ),
-                  SizedBox(width: 20),
-                  CarWidgets(
-                    isParked: true,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CarWidgets(
-                    isParked: true,
-                  ),
-                  SizedBox(width: 20),
-                  CarWidgets(
-                    isParked: false,
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  CarWidgets(),
-                  SizedBox(width: 20),
-                  CarWidgets(),
-                ],
+                ),
               ),
               Divider(thickness: 3),
             ],

@@ -12,12 +12,13 @@ class CarContronller extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    startDataUpdates();
+    // startDataUpdates();
+    getData();
   }
 
   void startDataUpdates() async {
     while (true) {
-      getData();
+      // getData();
       await Future.delayed(Duration(seconds: 1));
     }
   }

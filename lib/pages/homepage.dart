@@ -8,20 +8,23 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
     CarContronller carContronller = Get.put(CarContronller());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: Text(
+        title: const Text(
           "SMART CAR PARKING",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w600,
+          ),
         ),
         actions: [
           IconButton(
             onPressed: () {
               carContronller.addNote();
             },
-            icon: Icon(
+            icon: const Icon(
               Icons.car_repair,
               color: Colors.white,
               size: 30,
@@ -34,54 +37,7 @@ class HomePage extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              SizedBox(height: 19),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    padding: EdgeInsets.all(10),
-                    decoration: BoxDecoration(
-                      color: Colors.blue,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: Icon(
-                      Icons.car_repair,
-                      size: 50,
-                      color: Colors.white,
-                    ),
-                  ),
-                  SizedBox(width: 20),
-                  Text(
-                    "SMART CAR PARKING ",
-                    style: TextStyle(
-                      fontSize: 25,
-                      color: Colors.blue,
-                      fontWeight: FontWeight.w800,
-                      letterSpacing: 1.5,
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 29,
-              ),
-              Container(
-                height: 600,
-                child: Obx(
-                  () => GridView.count(
-                    crossAxisCount: 2,
-                    crossAxisSpacing: 10,
-                    children: carContronller.carData
-                        .map(
-                          (e) => CarWidgets(isParked: e.isParked),
-                        )
-                        .toList(),
-                  ),
-                ),
-              ),
-              Divider(thickness: 3),
-            ],
+            children: const [],
           ),
         ),
       ),

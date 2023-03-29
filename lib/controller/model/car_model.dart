@@ -8,7 +8,6 @@ class CarModel {
   String? parkedTo;
 
   CarModel({this.name, this.isParked, this.paymentDone, this.booked, this.parkedFrom, this.parkedTo});
-
   CarModel.fromJson(Map<String, dynamic> json) {
     name = json["name"];
     isParked = json["isParked"];

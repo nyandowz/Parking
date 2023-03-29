@@ -9,10 +9,18 @@ class ParkingController extends GetxController {
   var slot2KEY = "-NRdYRojJXhw3_aixhnM";
   var slot3KEY = "-NRdYTO7yp_MbMxjhic3";
   var slot4KEY = "-NRdYWXOcd8oWymDLroj";
+  var slot5KEY = "-NRh9RiMNakdmIi6fZUv";
+  var slot6KEY = "-NRh9UdC92OokxV__NlW";
+  var slot7KEY = "-NRhCKffU8n0q23MErf5";
+  var slot8KEY = "-NRhCR1Szb2a59nUtcfs";
   var slot1 = CarModel().obs;
-  var slot2 = CarModel();
-  var slot3 = CarModel();
-  var slot4 = CarModel();
+  var slot2 = CarModel().obs;
+  var slot3 = CarModel().obs;
+  var slot4 = CarModel().obs;
+  var slot5 = CarModel().obs;
+  var slot6 = CarModel().obs;
+  var slot7 = CarModel().obs;
+  var slot8 = CarModel().obs;
 
   @override
   void onInit() {
@@ -36,16 +44,16 @@ class ParkingController extends GetxController {
     final DatabaseReference res1 = fb.ref().child(slot1KEY);
     res1.onValue.listen((event) {
       DataSnapshot dataSnapshot = event.snapshot;
-      slot1 = CarModel.fromJson(
+      slot1.value = CarModel.fromJson(
         json.decode(
           json.encode(dataSnapshot.value),
         ),
-      ) as Rx<CarModel>;
+      );
     });
     final DatabaseReference res2 = fb.ref().child(slot2KEY);
     res2.onValue.listen((event) {
       DataSnapshot dataSnapshot = event.snapshot;
-      slot2 = CarModel.fromJson(
+      slot2.value = CarModel.fromJson(
         json.decode(
           json.encode(dataSnapshot.value),
         ),
@@ -54,7 +62,7 @@ class ParkingController extends GetxController {
     final DatabaseReference res3 = fb.ref().child(slot3KEY);
     res3.onValue.listen((event) {
       DataSnapshot dataSnapshot = event.snapshot;
-      slot3 = CarModel.fromJson(
+      slot3.value = CarModel.fromJson(
         json.decode(
           json.encode(dataSnapshot.value),
         ),
@@ -63,7 +71,43 @@ class ParkingController extends GetxController {
     final DatabaseReference res4 = fb.ref().child(slot4KEY);
     res4.onValue.listen((event) {
       DataSnapshot dataSnapshot = event.snapshot;
-      slot4 = CarModel.fromJson(
+      slot4.value = CarModel.fromJson(
+        json.decode(
+          json.encode(dataSnapshot.value),
+        ),
+      );
+    });
+    final DatabaseReference res5 = fb.ref().child(slot5KEY);
+    res5.onValue.listen((event) {
+      DataSnapshot dataSnapshot = event.snapshot;
+      slot5.value = CarModel.fromJson(
+        json.decode(
+          json.encode(dataSnapshot.value),
+        ),
+      );
+    });
+    final DatabaseReference res6 = fb.ref().child(slot6KEY);
+    res6.onValue.listen((event) {
+      DataSnapshot dataSnapshot = event.snapshot;
+      slot6.value = CarModel.fromJson(
+        json.decode(
+          json.encode(dataSnapshot.value),
+        ),
+      );
+    });
+    final DatabaseReference res7 = fb.ref().child(slot7KEY);
+    res7.onValue.listen((event) {
+      DataSnapshot dataSnapshot = event.snapshot;
+      slot7.value = CarModel.fromJson(
+        json.decode(
+          json.encode(dataSnapshot.value),
+        ),
+      );
+    });
+    final DatabaseReference res8 = fb.ref().child(slot8KEY);
+    res8.onValue.listen((event) {
+      DataSnapshot dataSnapshot = event.snapshot;
+      slot8.value = CarModel.fromJson(
         json.decode(
           json.encode(dataSnapshot.value),
         ),
@@ -74,7 +118,7 @@ class ParkingController extends GetxController {
   //   _databaseReference.remove();
   // }
 
-  // void addCar(CarModel car) {
-  //   _databaseReference.push().set(car.toJson());
-  // }
+  void addCar(CarModel car) {
+    fb.ref().push().set(car.toJson());
+  }
 }

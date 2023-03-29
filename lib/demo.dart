@@ -3,7 +3,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:smart_car_parking/controller/model/car_model.dart';
-import 'package:smart_car_parking/controller/realtime_database.dart';
+import 'package:smart_car_parking/controller/parking_controller.dart';
 
 class DemoPage extends StatelessWidget {
   const DemoPage({super.key});

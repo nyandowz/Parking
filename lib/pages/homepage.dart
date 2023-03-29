@@ -1,8 +1,8 @@
 import 'package:another_dashed_container/another_dashed_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:smart_car_parking/controller/car_controller.dart';
-import 'package:smart_car_parking/controller/realtime_database.dart';
+import 'package:smart_car_parking/controller/model/car_model.dart';
+import 'package:smart_car_parking/controller/parking_controller.dart';
 import 'package:smart_car_parking/pages/widgets/parking_slot.dart';
 
 class HomePage extends StatelessWidget {
@@ -24,7 +24,14 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {
-              // carContronller.addNote();
+              parkingController.addCar(CarModel(
+                booked: false,
+                isParked: true,
+                name: "Nitish kumar",
+                parkedFrom: "12",
+                paymentDone: true,
+                parkedTo: "12",
+              ));
             },
             icon: Icon(
               Icons.car_repair,
@@ -87,12 +94,13 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: ParkingSlot(
+                        child: Obx(
+                      () => ParkingSlot(
                         isBooked: parkingController.slot1.value.booked,
                         isParked: parkingController.slot1.value.isParked,
                         slotName: "A-1",
                       ),
-                    ),
+                    )),
                     SizedBox(
                       width: 60,
                       child: VerticalDivider(
@@ -103,8 +111,8 @@ class HomePage extends StatelessWidget {
                     ),
                     Expanded(
                       child: ParkingSlot(
-                        isBooked: parkingController.slot2.booked,
-                        isParked: parkingController.slot2.isParked,
+                        isBooked: parkingController.slot2.value.booked,
+                        isParked: parkingController.slot2.value.isParked,
                         slotName: "A-2",
                       ),
                     )
@@ -114,17 +122,13 @@ class HomePage extends StatelessWidget {
                 Row(
                   children: [
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.grey,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot3.value.booked,
+                        isParked: parkingController.slot3.value.isParked,
+                        slotName: "A-3",
                       ),
-                    ),
+                    )),
                     SizedBox(
                       width: 60,
                       child: VerticalDivider(
@@ -134,34 +138,26 @@ class HomePage extends StatelessWidget {
                       height: 60,
                     ),
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.blue.shade300,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot4.value.booked,
+                        isParked: parkingController.slot4.value.isParked,
+                        slotName: "A-4",
                       ),
-                    )
+                    ))
                   ],
                 ),
                 SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.grey,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot5.value.booked,
+                        isParked: parkingController.slot5.value.isParked,
+                        slotName: "A-5",
                       ),
-                    ),
+                    )),
                     SizedBox(
                       width: 60,
                       child: VerticalDivider(
@@ -171,34 +167,26 @@ class HomePage extends StatelessWidget {
                       height: 60,
                     ),
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.blue.shade300,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot6.value.booked,
+                        isParked: parkingController.slot6.value.isParked,
+                        slotName: "A-6",
                       ),
-                    )
+                    ))
                   ],
                 ),
                 SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.grey,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot7.value.booked,
+                        isParked: parkingController.slot7.value.isParked,
+                        slotName: "A-7",
                       ),
-                    ),
+                    )),
                     SizedBox(
                       width: 60,
                       child: VerticalDivider(
@@ -208,17 +196,13 @@ class HomePage extends StatelessWidget {
                       height: 60,
                     ),
                     Expanded(
-                      child: DashedContainer(
-                        child: Container(
-                          width: 180,
-                          height: 120,
-                        ),
-                        dashColor: Colors.blue.shade300,
-                        dashedLength: 10.0,
-                        blankLength: 9.0,
-                        strokeWidth: 1.0,
+                        child: Obx(
+                      () => ParkingSlot(
+                        isBooked: parkingController.slot8.value.booked,
+                        isParked: parkingController.slot8.value.isParked,
+                        slotName: "A-8",
                       ),
-                    )
+                    ))
                   ],
                 ),
                 Row(

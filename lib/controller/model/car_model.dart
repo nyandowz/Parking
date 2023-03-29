@@ -1,4 +1,3 @@
-
 class CarModel {
   String? name;
   bool? isParked;
@@ -7,7 +6,13 @@ class CarModel {
   String? parkedFrom;
   String? parkedTo;
 
-  CarModel({this.name, this.isParked, this.paymentDone, this.booked, this.parkedFrom, this.parkedTo});
+  CarModel(
+      {this.name,
+      this.isParked,
+      this.paymentDone,
+      this.booked,
+      this.parkedFrom,
+      this.parkedTo});
   CarModel.fromJson(Map<String, dynamic> json) {
     name = json["name"];
     isParked = json["isParked"];

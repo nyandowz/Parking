@@ -17,7 +17,7 @@ class DemoPage extends StatelessWidget {
             onTap: () {
               // DemoController.updateData();
               // DemoController.getData();
-              parkingController.getDataObject();
+              // parkingController.getDataObject();
 
               // DemoController.addCar(CarModel(
               //   booked: true,

@@ -9,16 +9,30 @@ class ParkingController extends GetxController {
   var slot2KEY = "-NRdYRojJXhw3_aixhnM";
   var slot3KEY = "-NRdYTO7yp_MbMxjhic3";
   var slot4KEY = "-NRdYWXOcd8oWymDLroj";
-  var slot1 = CarModel();
+  var slot1 = CarModel().obs;
   var slot2 = CarModel();
   var slot3 = CarModel();
   var slot4 = CarModel();
+
+  @override
+  void onInit() {
+    super.onInit();
+    // startDataUpdates();
+  }
 
   void updateData() async {
     await fb.ref().update({"value": 32});
   }
 
-  void getDataObject() async {
+  void startDataUpdates() async {
+    while (true) {
+      getData();
+      await Future.delayed(Duration(seconds: 1));
+      print("Data loaded");
+    }
+  }
+
+  void getData() async {
     final DatabaseReference res1 = fb.ref().child(slot1KEY);
     res1.onValue.listen((event) {
       DataSnapshot dataSnapshot = event.snapshot;
@@ -26,7 +40,7 @@ class ParkingController extends GetxController {
         json.decode(
           json.encode(dataSnapshot.value),
         ),
-      );
+      ) as Rx<CarModel>;
     });
     final DatabaseReference res2 = fb.ref().child(slot2KEY);
     res2.onValue.listen((event) {

@@ -62,7 +62,7 @@ class ParkingController extends GetxController {
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
-              children: [
+              children: const [
                 Text(
                   "Your Slot Booked",
                   style: TextStyle(

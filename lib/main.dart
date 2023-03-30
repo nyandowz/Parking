@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
     SplaceController splaceController = Get.put(SplaceController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
+      title: 'Car Parking',
       getPages: pages,
       theme: ThemeData(useMaterial3: true),
       home: const Splace_Screen(),

@@ -90,7 +90,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 15),
+              SizedBox(height: 20),
               Row(
                 children: [
                   Text(
@@ -162,7 +162,7 @@ class BookingPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              SizedBox(height: 80),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -196,9 +196,7 @@ class BookingPage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      parkingController.updateData(
-                          
-                          slotId);
+                      parkingController.updateData(slotId);
                     },
                     child: Container(
                       padding:

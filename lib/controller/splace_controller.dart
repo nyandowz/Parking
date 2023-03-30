@@ -9,7 +9,7 @@ class SplaceController extends GetxController {
 
   void pageHander() async {
     Future.delayed(
-      const Duration(seconds: 3),
+      const Duration(seconds: 6),
       () {
         Get.offAllNamed("/homepage");
         update();

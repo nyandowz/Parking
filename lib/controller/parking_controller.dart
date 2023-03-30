@@ -10,6 +10,7 @@ class ParkingController extends GetxController {
   final fb = FirebaseDatabase.instance;
   var parkingHours = 10.0.obs;
   var amountPay = 100.0.obs;
+  var selectedFloor = "1st Floor".obs;
   TextEditingController name = TextEditingController();
   var slot1KEY = "-NRdY57houxuL83j7cok";
   var slot2KEY = "-NRdYRojJXhw3_aixhnM";
@@ -31,7 +32,7 @@ class ParkingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    startDataUpdates();
+    // startDataUpdates();
   }
 
   void amountCalculator() {

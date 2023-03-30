@@ -2,6 +2,7 @@ import 'package:another_dashed_container/another_dashed_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
+import 'package:smart_car_parking/components/floot_selector.dart';
 import 'package:smart_car_parking/controller/model/car_model.dart';
 import 'package:smart_car_parking/controller/parking_controller.dart';
 import 'package:smart_car_parking/components/parking_slot.dart';
@@ -17,13 +18,32 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: blueColor,
-          title: Text(
-            "SMART CAR PARKING",
-            style: TextStyle(
-              color: Colors.white,
-              fontWeight: FontWeight.w600,
-            ),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                "assets/images/white_logo.png",
+                width: 40,
+                height: 40,
+              ),
+              SizedBox(width: 20),
+              const Text(
+                "SMART CAR PARKING",
+                style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w600,
+                ),
+              ),
+            ],
           ),
+          actions: [
+            IconButton(
+                onPressed: () {},
+                icon: const Icon(
+                  Icons.person,
+                  color: Colors.white,
+                ))
+          ],
           centerTitle: true,
         ),
         body: Obx(
@@ -33,7 +53,9 @@ class HomePage extends StatelessWidget {
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(height: 20),
+                    SizedBox(
+                      height: 20,
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -45,20 +67,21 @@ class HomePage extends StatelessWidget {
                                 fontSize: 20,
                               ),
                             ),
-                            Row(
-                              children: [
-                                Text(
-                                  "First Floor",
-                                  style:
-                                      TextStyle(fontSize: 15, color: blueColor),
-                                ),
-                                Icon(
-                                  Icons.arrow_downward,
-                                  size: 15,
-                                  color: blueColor,
-                                )
-                              ],
-                            ),
+                            FloorSelector(),
+                            // Row(
+                            //   children: [
+                            //     Text(
+                            //       "First Floor",
+                            //       style:
+                            //           TextStyle(fontSize: 15, color: blueColor),
+                            //     ),
+                            //     Icon(
+                            //       Icons.arrow_downward,
+                            //       size: 15,
+                            //       color: blueColor,
+                            //     )
+                            //   ],
+                            // ),
                           ],
                         )
                       ],
@@ -208,6 +231,19 @@ class HomePage extends StatelessWidget {
                         ),
                       ],
                     ),
+                    SizedBox(height: 40),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          "Made By : Ni30 Roy",
+                          style: TextStyle(
+                            color: lightBg,
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(height: 5),
                   ],
                 ),
               ),

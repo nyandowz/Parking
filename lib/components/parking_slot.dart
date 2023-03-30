@@ -2,17 +2,23 @@ import 'package:another_dashed_container/another_dashed_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:get/get.dart';
+import 'package:smart_car_parking/pages/booking_page/booking_page.dart';
+
+import '../config/colors.dart';
 
 class ParkingSlot extends StatelessWidget {
   final bool? isParked;
   final bool? isBooked;
   final String? slotName;
+  final String slotId;
 
   const ParkingSlot({
     super.key,
     this.isParked,
     this.isBooked,
     this.slotName,
+    required this.slotId,
   });
 
   @override
@@ -68,12 +74,17 @@ class ParkingSlot extends StatelessWidget {
               Expanded(
                 child: Center(
                   child: InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Get.to(BookingPage(
+                        slotId: slotId,
+                        slotName: slotName.toString(),
+                      ));
+                    },
                     child: Container(
                       padding:
                           EdgeInsets.symmetric(vertical: 7, horizontal: 30),
                       decoration: BoxDecoration(
-                        color: Colors.blue,
+                        color: blueColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
                       child: const Text(
@@ -82,6 +93,7 @@ class ParkingSlot extends StatelessWidget {
                           color: Colors.white,
                           fontSize: 15,
                           fontWeight: FontWeight.w500,
+                          letterSpacing: 1.2,
                         ),
                       ),
                     ),

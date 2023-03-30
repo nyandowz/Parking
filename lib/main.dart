@@ -1,14 +1,15 @@
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:smart_car_parking/controller/splace_controller.dart';
 import 'package:smart_car_parking/demo.dart';
-import 'package:smart_car_parking/pages/homepage.dart';
+import 'package:smart_car_parking/pages/homepage/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-
-import 'firebase_options.dart';
-// ignore: depend_on_referenced_packages
-// import 'package:smart_parking_station/firebase_options.dart';
+import 'package:smart_car_parking/pages/splace_page/splace_screen.dart';
+import 'package:smart_car_parking/pages/welcome_page/welcome_page.dart';
+import 'components/firebase_options.dart';
+import 'config/routes.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -21,15 +22,13 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SplaceController splaceController = Get.put(SplaceController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
-      theme: ThemeData(
-        useMaterial3: true,
-        primarySwatch: Colors.blue,
-      ),
-      home: HomePage(),
-      // home: DemoPage(),
+      getPages: pages,
+      theme: ThemeData(useMaterial3: true),
+      home: const Splace_Screen(),
     );
   }
 }

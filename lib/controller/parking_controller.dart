@@ -1,10 +1,16 @@
 import 'dart:convert';
 import 'package:firebase_database/firebase_database.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:lottie/lottie.dart';
+import '../config/colors.dart';
 import 'model/car_model.dart';
 
 class ParkingController extends GetxController {
   final fb = FirebaseDatabase.instance;
+  var parkingHours = 10.0.obs;
+  var amountPay = 100.0.obs;
+  TextEditingController name = TextEditingController();
   var slot1KEY = "-NRdY57houxuL83j7cok";
   var slot2KEY = "-NRdYRojJXhw3_aixhnM";
   var slot3KEY = "-NRdYTO7yp_MbMxjhic3";
@@ -25,11 +31,74 @@ class ParkingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    // startDataUpdates();
+    startDataUpdates();
   }
 
-  void updateData() async {
-    await fb.ref().update({"value": 32});
+  void amountCalculator() {
+    amountPay.value = parkingHours.value * 10;
+  }
+
+  void updateData(String slotId) async {
+    await fb.ref().child(slotId).update({
+      "name": name.text,
+      "parkingHours": parkingHours.toString(),
+      "paymentDone": true,
+      "booked": true,
+    });
+    print("Data Updated");
+    Get.defaultDialog(
+        barrierDismissible: false,
+        title: "SLOT BOOKED",
+        titleStyle: TextStyle(
+          fontSize: 18,
+          fontWeight: FontWeight.w500,
+          color: blueColor,
+        ),
+        content: Column(
+          children: [
+            Lottie.asset(
+              'assets/animation/done1.json',
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  "Your Slot Booked",
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w500,
+                    color: blueColor,
+                  ),
+                )
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(
+                  Icons.currency_rupee,
+                  size: 40,
+                  color: blueColor,
+                ),
+                Text(
+                  amountPay.value.toString(),
+                  style: TextStyle(
+                    fontSize: 40,
+                    fontWeight: FontWeight.w700,
+                    color: blueColor,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () {
+                Get.offAllNamed("/homepage");
+              },
+              child: Text("Close"),
+            )
+          ],
+        ));
   }
 
   void startDataUpdates() async {

@@ -1,13 +1,11 @@
 import 'package:get/get.dart';
-import 'package:smart_car_parking/pages/homepage.dart';
+import 'package:smart_car_parking/pages/booking_page/booking_page.dart';
+import 'package:smart_car_parking/pages/homepage/homepage.dart';
 
 var pages = [
   GetPage(
-    name: '/',
+    name: '/homepage',
     page: () => HomePage(),
-  ),
-  GetPage(
-    name: '/booking-page',
-    page: () => HomePage(),
+    transition: Transition.leftToRight,
   ),
 ];

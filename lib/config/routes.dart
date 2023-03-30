@@ -7,11 +7,11 @@ var pages = [
   GetPage(
     name: '/homepage',
     page: () => HomePage(),
-    transition: Transition.leftToRight,
+    transition: Transition.rightToLeft,
   ),
   GetPage(
     name: '/about-us',
     page: () => AboutUs(),
-    transition: Transition.leftToRight,
+    transition: Transition.rightToLeft,
   ),
 ];

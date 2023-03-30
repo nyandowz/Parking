@@ -1,9 +1,6 @@
-import 'package:another_dashed_container/another_dashed_container.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:lottie/lottie.dart';
 import 'package:smart_car_parking/components/floot_selector.dart';
-import 'package:smart_car_parking/controller/model/car_model.dart';
 import 'package:smart_car_parking/controller/parking_controller.dart';
 import 'package:smart_car_parking/components/parking_slot.dart';
 
@@ -26,7 +23,7 @@ class HomePage extends StatelessWidget {
                 width: 40,
                 height: 40,
               ),
-              SizedBox(width: 20),
+              const SizedBox(width: 20),
               const Text(
                 "SMART CAR PARKING",
                 style: TextStyle(
@@ -38,7 +35,9 @@ class HomePage extends StatelessWidget {
           ),
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.toNamed("/about-us");
+                },
                 icon: const Icon(
                   Icons.person,
                   color: Colors.white,
@@ -49,18 +48,18 @@ class HomePage extends StatelessWidget {
         body: Obx(
           () => SafeArea(
             child: Padding(
-              padding: EdgeInsets.all(8),
+              padding: const EdgeInsets.all(8),
               child: SingleChildScrollView(
                 child: Column(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Column(
-                          children: [
+                          children: const [
                             Text(
                               "Parking Slots",
                               style: TextStyle(
@@ -68,25 +67,11 @@ class HomePage extends StatelessWidget {
                               ),
                             ),
                             FloorSelector(),
-                            // Row(
-                            //   children: [
-                            //     Text(
-                            //       "First Floor",
-                            //       style:
-                            //           TextStyle(fontSize: 15, color: blueColor),
-                            //     ),
-                            //     Icon(
-                            //       Icons.arrow_downward,
-                            //       size: 15,
-                            //       color: blueColor,
-                            //     )
-                            //   ],
-                            // ),
                           ],
                         )
                       ],
                     ),
-                    SizedBox(height: 60),
+                    const SizedBox(height: 60),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -109,7 +94,7 @@ class HomePage extends StatelessWidget {
                             slotId: parkingController.slot1KEY,
                           ),
                         )),
-                        SizedBox(
+                        const SizedBox(
                           width: 60,
                           child: VerticalDivider(
                             color: blueColor,
@@ -127,7 +112,7 @@ class HomePage extends StatelessWidget {
                         )
                       ],
                     ),
-                    SizedBox(height: 20),
+                   const SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
@@ -139,7 +124,7 @@ class HomePage extends StatelessWidget {
                             slotName: "A-3",
                           ),
                         )),
-                        SizedBox(
+                     const   SizedBox(
                           width: 60,
                           child: VerticalDivider(
                             color: blueColor,
@@ -158,7 +143,7 @@ class HomePage extends StatelessWidget {
                         ))
                       ],
                     ),
-                    SizedBox(height: 20),
+                 const   SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
@@ -170,7 +155,7 @@ class HomePage extends StatelessWidget {
                             slotName: "A-5",
                           ),
                         )),
-                        SizedBox(
+                     const   SizedBox(
                           width: 60,
                           child: VerticalDivider(
                             color: blueColor,
@@ -189,7 +174,7 @@ class HomePage extends StatelessWidget {
                         ))
                       ],
                     ),
-                    SizedBox(height: 20),
+                  const  SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(

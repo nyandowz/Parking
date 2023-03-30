@@ -2,12 +2,10 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_car_parking/controller/splace_controller.dart';
-import 'package:smart_car_parking/demo.dart';
 import 'package:smart_car_parking/pages/homepage/homepage.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:smart_car_parking/pages/splace_page/splace_screen.dart';
-import 'package:smart_car_parking/pages/welcome_page/welcome_page.dart';
 import 'components/firebase_options.dart';
 import 'config/routes.dart';
 
@@ -22,7 +20,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    SplaceController splaceController = Get.put(SplaceController());
+    SplaceController  splaceController = Get.put(SplaceController());
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Car Parking',

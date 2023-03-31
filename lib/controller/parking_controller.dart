@@ -249,7 +249,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot2.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot2KEY).update(
@@ -273,7 +273,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot3.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot3KEY).update(
@@ -297,7 +297,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot4.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot4KEY).update(
@@ -321,7 +321,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot5.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot5KEY).update(
@@ -345,7 +345,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot6.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot6KEY).update(
@@ -369,7 +369,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot7.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot7KEY).update(
@@ -393,7 +393,7 @@ class ParkingController extends GetxController {
     double time = double.parse(slot8.value.parkingHours.toString());
 
     while (time != 0) {
-      await Future.delayed(Duration(minutes: 1));
+      await Future.delayed(Duration(seconds: 1));
       time--;
       print(time);
       await fb.ref().child(slot8KEY).update(

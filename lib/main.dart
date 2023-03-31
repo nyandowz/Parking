@@ -13,7 +13,6 @@ import 'config/routes.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(options: DefaultFirebaseOptions.currentPlatform);
-  await FlutterBackground.initialize();
   runApp(MyApp());
 }
 

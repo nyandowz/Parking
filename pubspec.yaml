@@ -42,7 +42,7 @@ dependencies:
   another_dashed_container: ^1.0.0
   lottie: ^2.3.1
   url_launcher: ^6.1.10
-  flutter_background: ^1.0.6
+
 
 dev_dependencies:
   flutter_test:

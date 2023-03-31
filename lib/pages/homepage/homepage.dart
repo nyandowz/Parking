@@ -41,7 +41,7 @@ class HomePage extends StatelessWidget {
                 icon: const Icon(
                   Icons.person,
                   color: Colors.white,
-                ))
+                )),
           ],
           centerTitle: true,
         ),
@@ -92,6 +92,8 @@ class HomePage extends StatelessWidget {
                             isParked: parkingController.slot1.value.isParked,
                             slotName: "A-1",
                             slotId: parkingController.slot1KEY,
+                            time: parkingController.slot1.value.parkingHours
+                                .toString(),
                           ),
                         )),
                         const SizedBox(
@@ -108,11 +110,13 @@ class HomePage extends StatelessWidget {
                             isParked: parkingController.slot2.value.isParked,
                             slotName: "A-2",
                             slotId: parkingController.slot2KEY,
+                            time: parkingController.slot2.value.parkingHours
+                                .toString(),
                           ),
                         )
                       ],
                     ),
-                   const SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
@@ -121,10 +125,12 @@ class HomePage extends StatelessWidget {
                             slotId: parkingController.slot3KEY,
                             isBooked: parkingController.slot3.value.booked,
                             isParked: parkingController.slot3.value.isParked,
+                            time: parkingController.slot3.value.parkingHours
+                                .toString(),
                             slotName: "A-3",
                           ),
                         )),
-                     const   SizedBox(
+                        const SizedBox(
                           width: 60,
                           child: VerticalDivider(
                             color: blueColor,
@@ -139,11 +145,13 @@ class HomePage extends StatelessWidget {
                             isBooked: parkingController.slot4.value.booked,
                             isParked: parkingController.slot4.value.isParked,
                             slotName: "A-4",
+                            time: parkingController.slot4.value.parkingHours
+                                .toString(),
                           ),
                         ))
                       ],
                     ),
-                 const   SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
@@ -152,10 +160,12 @@ class HomePage extends StatelessWidget {
                             slotId: parkingController.slot5KEY,
                             isBooked: parkingController.slot5.value.booked,
                             isParked: parkingController.slot5.value.isParked,
+                            time: parkingController.slot5.value.parkingHours
+                                .toString(),
                             slotName: "A-5",
                           ),
                         )),
-                     const   SizedBox(
+                        const SizedBox(
                           width: 60,
                           child: VerticalDivider(
                             color: blueColor,
@@ -170,11 +180,13 @@ class HomePage extends StatelessWidget {
                             isBooked: parkingController.slot6.value.booked,
                             isParked: parkingController.slot6.value.isParked,
                             slotName: "A-6",
+                            time: parkingController.slot6.value.parkingHours
+                                .toString(),
                           ),
                         ))
                       ],
                     ),
-                  const  SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     Row(
                       children: [
                         Expanded(
@@ -184,6 +196,8 @@ class HomePage extends StatelessWidget {
                             isBooked: parkingController.slot7.value.booked,
                             isParked: parkingController.slot7.value.isParked,
                             slotName: "A-7",
+                            time: parkingController.slot7.value.parkingHours
+                                .toString(),
                           ),
                         )),
                         SizedBox(
@@ -201,6 +215,8 @@ class HomePage extends StatelessWidget {
                             isBooked: parkingController.slot8.value.booked,
                             isParked: parkingController.slot8.value.isParked,
                             slotName: "A-8",
+                            time: parkingController.slot8.value.parkingHours
+                                .toString(),
                           ),
                         ))
                       ],

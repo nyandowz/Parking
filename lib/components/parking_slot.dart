@@ -12,13 +12,15 @@ class ParkingSlot extends StatelessWidget {
   final bool? isBooked;
   final String? slotName;
   final String slotId;
+  final String time;
 
   const ParkingSlot({
     super.key,
     this.isParked,
     this.isBooked,
     this.slotName,
-    required this.slotId,
+    this.slotId = "0.0",
+    required this.time,
   });
 
   @override
@@ -34,20 +36,34 @@ class ParkingSlot extends StatelessWidget {
         height: 120,
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
-              decoration: BoxDecoration(
-                  border: Border.all(
-                    color: Colors.blue.shade100,
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                time == "0.0"
+                    ? SizedBox(width: 1)
+                    : Container(
+                        child: Text(time),
+                      ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 3, horizontal: 15),
+                  decoration: BoxDecoration(
+                      border: Border.all(
+                        color: Colors.blue.shade100,
+                      ),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: Text(
+                    slotName.toString(),
+                    style: TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
-                  borderRadius: BorderRadius.circular(20)),
-              child: Text(
-                slotName.toString(),
-                style: TextStyle(
-                  fontSize: 12,
-                  fontWeight: FontWeight.w500,
                 ),
-              ),
+                Container(
+                  child: Text(""),
+                )
+              ],
             ),
             SizedBox(height: 10),
             if (isBooked == true && isParked == true)

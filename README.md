@@ -9,6 +9,7 @@ This project is a starting point for a Flutter application.
 
 <a href="https://github.com/MrNitishroy/Smart_car_parking_IOT/releases/download/Download/Car_parking_app.apk"> <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhiCNHoK-BxTFyf-D7vzSNtGAsXun9e105dAXMKvDE7ilG86WSqiwHI_om6WEJQV47X8EmzP43rY_k2iRR1fX7I_oZg1GyswbRXmh02JgY0jFIn0IA-oCMMSIgUBX8YlwMk5QtP75shuYxHa-vDjDpkklPsjMz6A96dXkTZOHzlGiW1qtlzM0FPrPeXwg/s309/donwload%20app.png"></a>
 
+<a href='https://me-qr.com' border='0' style='cursor:pointer;display:block'><img src='https://cdn.me-qr.com/qr/56199536.png?v=1681396540' alt='Create qr code for free'></a><a href='https://me-qr.com' border='0' style='cursor:default;display:none'>Create qr code for free</a>
 
 
 ## Flutter app 

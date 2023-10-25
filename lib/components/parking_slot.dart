@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
+import 'package:smart_car_parking/controller/WithoutFirebase.dart';
 import 'package:smart_car_parking/pages/booking_page/booking_page.dart';
 
 import '../config/colors.dart';
@@ -25,6 +26,7 @@ class ParkingSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
     return DashedContainer(
       dashColor: Colors.blue.shade300,
       dashedLength: 10.0,
@@ -66,7 +68,7 @@ class ParkingSlot extends StatelessWidget {
               ],
             ),
             SizedBox(height: 10),
-            if (isBooked == true && isParked == true)
+            if (isBooked == true)
               Expanded(
                 child: Image.asset("assets/images/car.png"),
               )
@@ -95,6 +97,7 @@ class ParkingSlot extends StatelessWidget {
                         slotId: slotId,
                         slotName: slotName.toString(),
                       ));
+                      // withoutFirebase.slot1.value = true;
                     },
                     child: Container(
                       padding:

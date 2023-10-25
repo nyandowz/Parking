@@ -51,7 +51,7 @@ class AboutUs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                "Nitish kumar",
+                "S SHERWIN ROY",
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -64,7 +64,7 @@ class AboutUs extends StatelessWidget {
             children: const [
               Flexible(
                 child: Text(
-                  "Hello, My name is nitish kumar i am Currently Pursuing b.tech in electronic and communication, this is a Minor Project of Our college,  Project Name : 'SMART CAR PARKING' app, Our Team members : Nitish kumar , Sonu Kumar, Aditya Mishra and Jitendra Kumar",
+                  "HELLO ,MY NAME IS SHERWIN ROY S i am currently pursuing BE in Computer Science engineering this project is conducted by IBM NAAN MUDALVAN PROJECT NAME:SMART PARKING ..Our Team Members: JENIN RAJ,BINO,JOYEL,PRAVIN",
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.grey,

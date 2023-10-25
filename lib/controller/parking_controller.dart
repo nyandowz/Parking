@@ -41,7 +41,7 @@ class ParkingController extends GetxController {
   @override
   void onInit() {
     super.onInit();
-    startDataUpdates();
+    // startDataUpdates();
   }
 
   void amountCalculator() {

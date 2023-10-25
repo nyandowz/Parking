@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:smart_car_parking/components/floot_selector.dart';
-import 'package:smart_car_parking/controller/parking_controller.dart';
 import 'package:smart_car_parking/components/parking_slot.dart';
+import 'package:smart_car_parking/controller/WithoutFirebase.dart';
 
 import '../../config/colors.dart';
 
@@ -11,7 +11,7 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ParkingController parkingController = Get.put(ParkingController());
+    WithoutFirebase parkingController = Get.put(WithoutFirebase());
     return Scaffold(
         appBar: AppBar(
           backgroundColor: blueColor,
@@ -88,14 +88,12 @@ class HomePage extends StatelessWidget {
                         Expanded(
                             child: Obx(
                           () => ParkingSlot(
-                            isBooked: parkingController.slot1.value.booked,
-                            isParked: parkingController.slot1.value.isParked,
+                            isBooked: parkingController.slot1.value,
+                            isParked: parkingController.slot1.value,
                             slotName: "A-1",
                             slotId: parkingController.slot1KEY,
-                            time: parkingController.slot1.value.parkingHours
-                                .toString(),
-                          ),
-                        )),
+                            time: "10",
+                          ),),),
                         const SizedBox(
                           width: 60,
                           child: VerticalDivider(
@@ -105,14 +103,13 @@ class HomePage extends StatelessWidget {
                           height: 60,
                         ),
                         Expanded(
-                          child: ParkingSlot(
-                            isBooked: parkingController.slot2.value.booked,
-                            isParked: parkingController.slot2.value.isParked,
+                          child:ParkingSlot(
+                            isBooked: parkingController.slot2.value,
+                            isParked: parkingController.slot2.value,
                             slotName: "A-2",
                             slotId: parkingController.slot2KEY,
-                            time: parkingController.slot2.value.parkingHours
-                                .toString(),
-                          ),
+                            time: "10",
+                           ),
                         )
                       ],
                     ),
@@ -123,10 +120,9 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot3KEY,
-                            isBooked: parkingController.slot3.value.booked,
-                            isParked: parkingController.slot3.value.isParked,
-                            time: parkingController.slot3.value.parkingHours
-                                .toString(),
+                            isBooked: parkingController.slot3.value,
+                            isParked: parkingController.slot3.value,
+                            time: "10",
                             slotName: "A-3",
                           ),
                         )),
@@ -142,11 +138,10 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot4KEY,
-                            isBooked: parkingController.slot4.value.booked,
-                            isParked: parkingController.slot4.value.isParked,
+                            isBooked: parkingController.slot4.value,
+                            isParked: parkingController.slot4.value,
                             slotName: "A-4",
-                            time: parkingController.slot4.value.parkingHours
-                                .toString(),
+                            time: "10",
                           ),
                         ))
                       ],
@@ -158,10 +153,9 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot5KEY,
-                            isBooked: parkingController.slot5.value.booked,
-                            isParked: parkingController.slot5.value.isParked,
-                            time: parkingController.slot5.value.parkingHours
-                                .toString(),
+                            isBooked: parkingController.slot5.value,
+                            isParked: parkingController.slot5.value,
+                            time: "10",
                             slotName: "A-5",
                           ),
                         )),
@@ -177,11 +171,10 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot6KEY,
-                            isBooked: parkingController.slot6.value.booked,
-                            isParked: parkingController.slot6.value.isParked,
+                            isBooked: parkingController.slot6.value,
+                            isParked: parkingController.slot6.value,
                             slotName: "A-6",
-                            time: parkingController.slot6.value.parkingHours
-                                .toString(),
+                            time: "10",
                           ),
                         ))
                       ],
@@ -193,11 +186,10 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot7KEY,
-                            isBooked: parkingController.slot7.value.booked,
-                            isParked: parkingController.slot7.value.isParked,
+                            isBooked: parkingController.slot7.value,
+                            isParked: parkingController.slot7.value,
                             slotName: "A-7",
-                            time: parkingController.slot7.value.parkingHours
-                                .toString(),
+                            time: "10",
                           ),
                         )),
                         SizedBox(
@@ -212,11 +204,10 @@ class HomePage extends StatelessWidget {
                             child: Obx(
                           () => ParkingSlot(
                             slotId: parkingController.slot8KEY,
-                            isBooked: parkingController.slot8.value.booked,
-                            isParked: parkingController.slot8.value.isParked,
+                            isBooked: parkingController.slot8.value,
+                            isParked: parkingController.slot8.value,
                             slotName: "A-8",
-                            time: parkingController.slot8.value.parkingHours
-                                .toString(),
+                            time: "10",
                           ),
                         ))
                       ],
@@ -237,7 +228,7 @@ class HomePage extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "Made By : Ni30 Roy",
+                          "Made By : S SHERWIN ROY",
                           style: TextStyle(
                             color: lightBg,
                           ),

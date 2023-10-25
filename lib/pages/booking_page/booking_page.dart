@@ -16,7 +16,7 @@ class BookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    ParkingController parkingController = Get.put(ParkingController());
+    // ParkingController parkingController = Get.put(ParkingController());
     WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
     return Scaffold(
       appBar: AppBar(
@@ -106,11 +106,11 @@ class BookingPage extends StatelessWidget {
                   thumbColor: blueColor,
                   activeColor: blueColor,
                   inactiveColor: lightBg,
-                  label: parkingController.parkingHours.value.toString(),
-                  value: parkingController.parkingHours.value,
+                  label: withoutFirebase.parkingHours.value.toString(),
+                  value: withoutFirebase.parkingHours.value,
                   onChanged: (v) {
-                    parkingController.parkingHours.value = v;
-                    parkingController.amountCalculator();
+                    withoutFirebase.parkingHours.value = v;
+                    withoutFirebase.amountCalculator();
                   },
                   divisions: 5,
                   min: 10,
@@ -184,7 +184,7 @@ class BookingPage extends StatelessWidget {
                           ),
                           Obx(
                             () => Text(
-                              parkingController.amountPay.value.toString(),
+                              withoutFirebase.amountPay.value.toString(),
                               style: TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
@@ -198,8 +198,8 @@ class BookingPage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      withoutFirebase.makePayment();
-                      // parkingController.updateData(slotId);
+                      withoutFirebase.makePayment(slotId);
+                    //  withoutFirebase.slot1.value = true;
                     },
                     child: Container(
                       padding:

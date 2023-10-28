@@ -7,7 +7,6 @@ import 'package:smart_car_parking/controller/model/car_model.dart';
 import 'package:smart_car_parking/controller/parking_controller.dart';
 
 import '../../config/colors.dart';
-import '../../controller/WithoutFirebase.dart';
 
 class BookingPage extends StatelessWidget {
   final String slotName;
@@ -16,8 +15,12 @@ class BookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     // ParkingController parkingController = Get.put(ParkingController());
     WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
+=======
+    ParkingController parkingController = Get.put(ParkingController());
+>>>>>>> parent of 16d8420 (without firebase addded)
     return Scaffold(
       appBar: AppBar(
         backgroundColor: blueColor,
@@ -198,8 +201,6 @@ class BookingPage extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      withoutFirebase.makePayment(slotId);
-                    //  withoutFirebase.slot1.value = true;
                     },
                     child: Container(
                       padding:

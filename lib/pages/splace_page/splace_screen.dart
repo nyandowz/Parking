@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
+import 'package:smart_car_parking/Data.dart';
 
 class Splace_Screen extends StatelessWidget {
   const Splace_Screen({super.key});
@@ -62,7 +63,7 @@ class Splace_Screen extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Image.asset(
-                "assets/images/tit.png",
+                collegeLogo,
                 width: 200,
               )
             ],

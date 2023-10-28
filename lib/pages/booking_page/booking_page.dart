@@ -23,7 +23,7 @@ class BookingPage extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         centerTitle: true,
@@ -45,7 +45,7 @@ class BookingPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Book Now 😊",
@@ -61,7 +61,7 @@ class BookingPage extends StatelessWidget {
                 color: blueColor,
               ),
               SizedBox(height: 30),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Enter your name ",
@@ -74,7 +74,7 @@ class BookingPage extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       controller: parkingController.name,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         fillColor: lightBg,
                         filled: true,
                         border: InputBorder.none,
@@ -89,7 +89,7 @@ class BookingPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Choose Slot Time (in Minuits)",
@@ -112,11 +112,11 @@ class BookingPage extends StatelessWidget {
                   min: 10,
                   max: 60,
                 ),),
-              Padding(
+           const   Padding(
                 padding: const EdgeInsets.only(left: 10, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children:  [
                     Text("10"),
                     Text("20"),
                     Text("30"),

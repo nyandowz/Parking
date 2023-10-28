@@ -1,9 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:smart_car_parking/config/colors.dart';
 
 class Splace_Screen extends StatelessWidget {
   const Splace_Screen({super.key});
@@ -11,7 +7,6 @@ class Splace_Screen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      // backgroundColor: darkBgColor,
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(children: [
@@ -30,7 +25,7 @@ class Splace_Screen extends StatelessWidget {
                     ),
                   ],
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -42,8 +37,8 @@ class Splace_Screen extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 10),
-                Row(
+                const SizedBox(height: 10),
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Flexible(

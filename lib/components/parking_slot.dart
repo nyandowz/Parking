@@ -1,9 +1,6 @@
 import 'package:another_dashed_container/another_dashed_container.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
-import 'package:smart_car_parking/controller/WithoutFirebase.dart';
 import 'package:smart_car_parking/pages/booking_page/booking_page.dart';
 
 import '../config/colors.dart';
@@ -26,7 +23,6 @@ class ParkingSlot extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
     return DashedContainer(
       dashColor: Colors.blue.shade300,
       dashedLength: 10.0,
@@ -41,7 +37,7 @@ class ParkingSlot extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                time == "0.0"
+                time == ""
                     ? SizedBox(width: 1)
                     : Container(
                         child: Text(time),
@@ -97,7 +93,6 @@ class ParkingSlot extends StatelessWidget {
                         slotId: slotId,
                         slotName: slotName.toString(),
                       ));
-                      // withoutFirebase.slot1.value = true;
                     },
                     child: Container(
                       padding:

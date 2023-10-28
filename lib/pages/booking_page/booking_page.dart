@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
-import 'package:smart_car_parking/controller/model/car_model.dart';
-import 'package:smart_car_parking/controller/parking_controller.dart';
+import 'package:smart_car_parking/controller/PakingController.dart';
 
 import '../../config/colors.dart';
 
@@ -15,12 +12,8 @@ class BookingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
-    // ParkingController parkingController = Get.put(ParkingController());
-    WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
-=======
     ParkingController parkingController = Get.put(ParkingController());
->>>>>>> parent of 16d8420 (without firebase addded)
+    // WithoutFirebase withoutFirebase = Get.put(WithoutFirebase());
     return Scaffold(
       appBar: AppBar(
         backgroundColor: blueColor,
@@ -81,6 +74,7 @@ class BookingPage extends StatelessWidget {
                 children: [
                   Expanded(
                     child: TextFormField(
+                      controller: parkingController.name,
                       decoration: InputDecoration(
                         fillColor: lightBg,
                         filled: true,
@@ -104,22 +98,21 @@ class BookingPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 10),
-              Obx(
-                () => Slider(
+             Obx(() => Slider(
+              mouseCursor: MouseCursor.defer,
                   thumbColor: blueColor,
                   activeColor: blueColor,
                   inactiveColor: lightBg,
-                  label: withoutFirebase.parkingHours.value.toString(),
-                  value: withoutFirebase.parkingHours.value,
+                  label: "${parkingController.parkingTimeInMin.value} min",
+                  value: parkingController.parkingTimeInMin.value,
                   onChanged: (v) {
-                    withoutFirebase.parkingHours.value = v;
-                    withoutFirebase.amountCalculator();
+                    parkingController.parkingTimeInMin.value = v;
+                     parkingController.parkingAmount.value = (parkingController.parkingTimeInMin.value * 15).round();
                   },
                   divisions: 5,
                   min: 10,
                   max: 60,
-                ),
-              ),
+                ),),
               Padding(
                 padding: const EdgeInsets.only(left: 10, right: 20),
                 child: Row(
@@ -185,22 +178,22 @@ class BookingPage extends StatelessWidget {
                             size: 30,
                             color: blueColor,
                           ),
-                          Obx(
-                            () => Text(
-                              withoutFirebase.amountPay.value.toString(),
+                         Obx(() => Text(
+                              "${parkingController.parkingAmount.value}",
                               style: TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
                                 color: blueColor,
                               ),
-                            ),
-                          )
+                            ),)
                         ],
                       ),
                     ],
                   ),
                   InkWell(
                     onTap: () {
+                      // withoutFirebase.makePayment(slotId);
+                    //  withoutFirebase.slot1.value = true;
                     },
                     child: Container(
                       padding:

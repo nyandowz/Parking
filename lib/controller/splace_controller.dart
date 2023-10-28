@@ -11,7 +11,7 @@ class SplaceController extends GetxController {
     Future.delayed(
       const Duration(seconds: 6),
       () {
-        Get.offAllNamed("/homepage");
+        Get.offAllNamed("/map-page");
         update();
       },
     );

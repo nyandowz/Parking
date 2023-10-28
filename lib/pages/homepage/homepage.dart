@@ -17,11 +17,7 @@ class HomePage extends StatelessWidget {
           title: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Image.asset(
-                "assets/images/white_logo.png",
-                width: 40,
-                height: 40,
-              ),
+         
               const SizedBox(width: 20),
               const Text(
                 "SMART CAR PARKING",

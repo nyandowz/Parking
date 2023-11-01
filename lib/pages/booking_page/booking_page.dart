@@ -88,6 +88,34 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
+              SizedBox(height: 30),
+              const Row(
+                children: [
+                  Text(
+                    "Enter Vehical Number ",
+                  )
+                ],
+              ),
+              SizedBox(height: 10),
+              Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: parkingController.vehicalNumber,
+                      decoration: const InputDecoration(
+                        fillColor: lightBg,
+                        filled: true,
+                        border: InputBorder.none,
+                        prefixIcon: Icon(
+                          Icons.car_rental,
+                          color: blueColor,
+                        ),
+                        hintText: "CBR2340",
+                      ),
+                    ),
+                  )
+                ],
+              ),
               SizedBox(height: 20),
               const Row(
                 children: [

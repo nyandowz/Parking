@@ -109,7 +109,7 @@ class BookingPage extends StatelessWidget {
                           Icons.car_rental,
                           color: blueColor,
                         ),
-                        hintText: "CBR2340",
+                        hintText: "WB 04 ED 0987",
                       ),
                     ),
                   )
@@ -133,7 +133,14 @@ class BookingPage extends StatelessWidget {
                   value: parkingController.parkingTimeInMin.value,
                   onChanged: (v) {
                     parkingController.parkingTimeInMin.value = v;
-                     parkingController.parkingAmount.value = (parkingController.parkingTimeInMin.value * 15).round();
+                    if(v<=30)
+                    {
+                       parkingController.parkingAmount.value=30;
+                    }
+                    else{
+                      parkingController.parkingAmount.value = 60;
+                    }
+                    //  parkingController.parkingAmount.value = (parkingController.parkingTimeInMin.value * 10).round();
                   },
                   divisions: 5,
                   min: 10,

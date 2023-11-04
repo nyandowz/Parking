@@ -360,6 +360,24 @@ class ParkingController extends GetxController {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
+                Icon(Icons.car_rental),
+                SizedBox(width: 5),
+                Text("Vehical No  : ",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),),
+                SizedBox(width: 20),
+                Text(vehicalNumber.text,style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
                 Icon(Icons.watch_later_outlined),
                 SizedBox(width: 5),
                 Text("Parking time : ",style: TextStyle(

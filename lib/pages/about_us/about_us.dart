@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
+import 'package:smart_car_parking/Data.dart';
 import 'package:smart_car_parking/config/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
-import 'package:url_launcher/url_launcher_string.dart';
 
 class AboutUs extends StatelessWidget {
   const AboutUs({super.key});
@@ -40,7 +40,7 @@ class AboutUs extends StatelessWidget {
                     color: Colors.orange.shade600,
                   ),
                   image: const DecorationImage(
-                    image: AssetImage("assets/images/profile.jpg"),
+                    image: AssetImage(profilePath),
                   ),
                 ),
               ),
@@ -51,7 +51,7 @@ class AboutUs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: const [
               Text(
-                "S SHERWIN ROY",
+                LeaderName,
                 style: TextStyle(
                   fontSize: 30,
                   fontWeight: FontWeight.w600,
@@ -64,7 +64,7 @@ class AboutUs extends StatelessWidget {
             children: const [
               Flexible(
                 child: Text(
-                  "HELLO ,MY NAME IS SHERWIN ROY S i am currently pursuing BE in Computer Science engineering this project is conducted by IBM NAAN MUDALVAN PROJECT NAME:SMART PARKING ..Our Team Members: JENIN RAJ,BINO,JOYEL,PRAVIN",
+                  bio,
                   style: TextStyle(
                     fontSize: 18,
                     color: Colors.grey,
@@ -79,9 +79,18 @@ class AboutUs extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               InkWell(
-                onTap: () async {},
+                onTap: () async {
+                  var url =
+                      Uri.parse("https://github.com/MrNitishroy/Smart_car_parking_IOT");
+                  if (await canLaunchUrl(url)) {
+                    await launchUrl(url);
+                  } else {
+                   
+                    print("Could not launch $url");
+                  }
+                },
                 child: Container(
-                  padding:const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(2),
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
@@ -99,7 +108,7 @@ class AboutUs extends StatelessWidget {
               InkWell(
                 onTap: () async {},
                 child: Container(
-                  padding:const EdgeInsets.all(2),
+                  padding: const EdgeInsets.all(2),
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(

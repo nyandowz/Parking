@@ -7,8 +7,10 @@ import 'package:smart_car_parking/controller/model/car_model.dart';
 class ParkingController extends GetxController {
   RxList<CarModel> parkingSlotList = <CarModel>[].obs;
   TextEditingController name = TextEditingController();
+  TextEditingController vehicalNumber = TextEditingController();
   RxDouble parkingTimeInMin = 10.0.obs;
   RxInt parkingAmount = 100.obs;
+  RxString slotName = "".obs;
   // int time = 19;
   Rx<CarModel> slot1 = CarModel(
     booked: false,
@@ -69,6 +71,7 @@ class ParkingController extends GetxController {
 
   void bookParkingSlot(String slotId) {
     print(parkingTimeInMin.value);
+    slotName.value = slotId;
 
     print(slotId);
     if (slotId == "1") {
@@ -117,7 +120,6 @@ class ParkingController extends GetxController {
       paymentDone: false,
     );
     print("Parking Time  ❤️ End ");
-   
   }
 
   void slot2Controller() async {
@@ -324,9 +326,7 @@ class ParkingController extends GetxController {
             Lottie.asset(
               'assets/animation/done1.json',
             ),
-            Text(slot1.value.parkingHours.toString()),
-            Text(slot1.value.booked.toString()),
-            Row(
+              Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Text(
@@ -339,6 +339,79 @@ class ParkingController extends GetxController {
                 )
               ],
             ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.person),
+                SizedBox(width: 5),
+                Text("Name : ",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),),
+                SizedBox(width: 20),
+                Text(name.text,style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.car_rental),
+                SizedBox(width: 5),
+                Text("Vehical No  : ",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),),
+                SizedBox(width: 20),
+                Text(vehicalNumber.text,style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.watch_later_outlined),
+                SizedBox(width: 5),
+                Text("Parking time : ",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),),
+                SizedBox(width: 20),
+                Text(parkingTimeInMin.value.toString(),style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.solar_power_outlined),
+                SizedBox(width: 5),
+                Text("Parking Slot : ",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.grey
+                ),),
+                SizedBox(width: 20),
+                Text("A-${slotName.value.toString()}",style: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black
+                ),),
+              ],
+            ),
+       
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [

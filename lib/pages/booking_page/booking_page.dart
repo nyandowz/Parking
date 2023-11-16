@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:lottie/lottie.dart';
 import 'package:smart_car_parking/controller/PakingController.dart';
-
 import '../../config/colors.dart';
 
 class BookingPage extends StatelessWidget {
@@ -24,7 +23,7 @@ class BookingPage extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         centerTitle: true,
@@ -46,7 +45,7 @@ class BookingPage extends StatelessWidget {
                 ],
               ),
               SizedBox(height: 20),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Book Now 😊",
@@ -62,7 +61,7 @@ class BookingPage extends StatelessWidget {
                 color: blueColor,
               ),
               SizedBox(height: 30),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Enter your name ",
@@ -75,7 +74,7 @@ class BookingPage extends StatelessWidget {
                   Expanded(
                     child: TextFormField(
                       controller: parkingController.name,
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                         fillColor: lightBg,
                         filled: true,
                         border: InputBorder.none,
@@ -89,8 +88,36 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 20),
+              SizedBox(height: 30),
+              const Row(
+                children: [
+                  Text(
+                    "Enter Vehical Number ",
+                  )
+                ],
+              ),
+              SizedBox(height: 10),
               Row(
+                children: [
+                  Expanded(
+                    child: TextFormField(
+                      controller: parkingController.vehicalNumber,
+                      decoration: const InputDecoration(
+                        fillColor: lightBg,
+                        filled: true,
+                        border: InputBorder.none,
+                        prefixIcon: Icon(
+                          Icons.car_rental,
+                          color: blueColor,
+                        ),
+                        hintText: "WB 04 ED 0987",
+                      ),
+                    ),
+                  )
+                ],
+              ),
+              SizedBox(height: 20),
+              const Row(
                 children: [
                   Text(
                     "Choose Slot Time (in Minuits)",
@@ -107,17 +134,24 @@ class BookingPage extends StatelessWidget {
                   value: parkingController.parkingTimeInMin.value,
                   onChanged: (v) {
                     parkingController.parkingTimeInMin.value = v;
-                     parkingController.parkingAmount.value = (parkingController.parkingTimeInMin.value * 15).round();
+                    if(v<=30)
+                    {
+                       parkingController.parkingAmount.value=30;
+                    }
+                    else{
+                      parkingController.parkingAmount.value = 60;
+                    }
+                    //  parkingController.parkingAmount.value = (parkingController.parkingTimeInMin.value * 10).round();
                   },
                   divisions: 5,
                   min: 10,
                   max: 60,
                 ),),
-              Padding(
+           const   Padding(
                 padding: const EdgeInsets.only(left: 10, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: const [
+                  children:  [
                     Text("10"),
                     Text("20"),
                     Text("30"),

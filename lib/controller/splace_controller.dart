@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:smart_car_parking/pages/LoginPage.dart';
 
 class SplaceController extends GetxController {
   @override
@@ -11,7 +12,8 @@ class SplaceController extends GetxController {
     Future.delayed(
       const Duration(seconds: 6),
       () {
-        Get.offAllNamed("/homepage");
+        // Get.offAllNamed("/map-page");
+        Get.offAll(LoginPage());
         update();
       },
     );

@@ -1,7 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class MyButton extends StatelessWidget {
   final IconData icon;
@@ -14,7 +12,7 @@ class MyButton extends StatelessWidget {
     return InkWell(
       onTap: ontap,
       child: Container(
-        padding: EdgeInsets.all(15),
+        padding: const EdgeInsets.all(15),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
           color: Colors.deepPurple,
@@ -26,10 +24,10 @@ class MyButton extends StatelessWidget {
           icon,
              color: Colors.white,
             ),
-            SizedBox(width: 10),
+            const SizedBox(width: 10),
             Text(
               Btname,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18,
                  color: Colors.white,
               ),

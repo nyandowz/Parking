@@ -6,7 +6,7 @@ import 'package:smart_car_parking/controller/PakingController.dart';
 import '../../config/colors.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -14,12 +14,12 @@ class HomePage extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: blueColor,
-          title: Row(
+          title: const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
          
-              const SizedBox(width: 20),
-              const Text(
+              SizedBox(width: 20),
+              Text(
                 "SMART CAR PARKING",
                 style: TextStyle(
                   color: Colors.white,
@@ -42,7 +42,7 @@ class HomePage extends StatelessWidget {
           centerTitle: true,
         ),
         body: Padding(
-          padding: EdgeInsets.all(8),
+          padding: const EdgeInsets.all(8),
           child: SingleChildScrollView(
             child: Column(
               children: [
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                     )
                   ],
                 ),
-                SizedBox(height: 60),
+                const SizedBox(height: 60),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -111,7 +111,7 @@ class HomePage extends StatelessWidget {
                     ))
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
@@ -142,7 +142,7 @@ class HomePage extends StatelessWidget {
                             )))
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
@@ -173,7 +173,7 @@ class HomePage extends StatelessWidget {
                             )))
                   ],
                 ),
-                SizedBox(height: 20),
+                const SizedBox(height: 20),
                 Row(
                   children: [
                     Expanded(
@@ -212,7 +212,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 40),
+                const SizedBox(height: 40),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
@@ -224,7 +224,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
-                SizedBox(height: 5),
+                const SizedBox(height: 5),
               ],
             ),
           ),

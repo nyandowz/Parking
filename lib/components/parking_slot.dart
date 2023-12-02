@@ -38,7 +38,7 @@ class ParkingSlot extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 time == ""
-                    ? SizedBox(width: 1)
+                    ? const SizedBox(width: 1)
                     : Container(
                         child: Text(time),
                       ),
@@ -52,18 +52,18 @@ class ParkingSlot extends StatelessWidget {
                       borderRadius: BorderRadius.circular(20)),
                   child: Text(
                     slotName.toString(),
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
                 ),
                 Container(
-                  child: Text(""),
+                  child: const Text(""),
                 )
               ],
             ),
-            SizedBox(height: 10),
+            const SizedBox(height: 10),
             if (isBooked == true)
               Expanded(
                 child: Image.asset("assets/images/car.png"),
@@ -96,7 +96,7 @@ class ParkingSlot extends StatelessWidget {
                     },
                     child: Container(
                       padding:
-                          EdgeInsets.symmetric(vertical: 7, horizontal: 30),
+                          const EdgeInsets.symmetric(vertical: 7, horizontal: 30),
                       decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(10),

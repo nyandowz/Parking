@@ -13,7 +13,7 @@ class SplaceController extends GetxController {
       const Duration(seconds: 6),
       () {
         // Get.offAllNamed("/map-page");
-        Get.offAll(LoginPage());
+        Get.offAll(const LoginPage());
         update();
       },
     );

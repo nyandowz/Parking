@@ -24,7 +24,7 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     final Completer<GoogleMapController> controller = Completer();
-    const LatLng center = LatLng(23.25226182392082, 77.48536382627971);
+    const LatLng center = LatLng(-1.2985, 36.7625);
 
     return Scaffold(
       appBar: AppBar(
@@ -72,42 +72,42 @@ class _MapPageState extends State<MapPage> {
           Marker(
             visible: true,
             onTap: () {
-              Get.to(HomePage());
+              Get.to(const HomePage());
             },
-            markerId: MarkerId('parking_1'),
-            position: LatLng(23.25149294505952, 77.48705898225234),
+            markerId: const MarkerId('parking_1'),
+            position: const LatLng(-1.2985, 36.7625),
           ),
           Marker(
             visible: true,
             onTap: () {
-              Get.to(HomePage());
+              Get.to(const HomePage());
             },
-            markerId: MarkerId('parking_2'),
-            position: LatLng(23.252025246281843, 77.48283182115601),
+            markerId: const MarkerId('parking_2'),
+            position: const LatLng(-1.2985, 36.7625),
           ),
           Marker(
             visible: true,
             onTap: () {
-              Get.to(HomePage());
+              Get.to(const HomePage());
             },
-            markerId: MarkerId('parking_3'),
-            position: LatLng(23.251670379036387, 77.47907672881156),
+            markerId: const MarkerId('parking_3'),
+            position: const LatLng(-1.2985, 36.7625),
           ),
           Marker(
             visible: true,
             onTap: () {
-              Get.to(HomePage());
+              Get.to(const HomePage());
             },
-            markerId: MarkerId('parking_4'),
-            position: LatLng(23.2484962466233, 77.48594318366699),
+            markerId: const MarkerId('parking_4'),
+            position: const LatLng(-1.2985, 36.7625),
           ),
           Marker(
             visible: true,
             onTap: () {
-              Get.to(HomePage());
+              Get.to(const HomePage());
             },
-            markerId: MarkerId('parking_5'),
-            position: LatLng(23.251951095267497, 77.48558382672624),
+            markerId: const MarkerId('parking_5'),
+            position: const LatLng(-1.2985, 36.7625),
           ),
         },
         myLocationButtonEnabled: true,

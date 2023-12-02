@@ -26,14 +26,14 @@ class CarModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> _data = <String, dynamic>{};
-    _data["name"] = name;
-    _data["isParked"] = isParked;
-    _data["paymentDone"] = paymentDone;
-    _data["booked"] = booked;
-    _data["parkedFrom"] = parkedFrom;
-    _data["parkingHours"] = parkingHours;
-    _data["parkedTo"] = parkedTo;
-    return _data;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data["name"] = name;
+    data["isParked"] = isParked;
+    data["paymentDone"] = paymentDone;
+    data["booked"] = booked;
+    data["parkedFrom"] = parkedFrom;
+    data["parkingHours"] = parkingHours;
+    data["parkedTo"] = parkedTo;
+    return data;
   }
 }

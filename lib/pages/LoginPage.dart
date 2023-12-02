@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:smart_car_parking/components/MyButton.dart';
 import 'package:smart_car_parking/components/MyTextField.dart';
 import 'package:smart_car_parking/pages/MapPage.dart';
@@ -14,7 +13,7 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.deepPurple.shade200,
-        title: Text("😍 L O G I N 🌳"),
+        title: const Text("😍 L O G I N 🌳"),
         centerTitle: true,
       ),
       body: SafeArea(
@@ -22,7 +21,7 @@ class LoginPage extends StatelessWidget {
           padding: const EdgeInsets.all(10),
           child: SingleChildScrollView(
             child: Column(children: [
-              Row(
+              const Row(
                 children: [
                   Text(
                     "Welcome back ❤️",
@@ -30,7 +29,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              Row(
+              const Row(
                 children: [
                   Text(
                     "LOGIN",
@@ -38,18 +37,18 @@ class LoginPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               MyTextField(
                   icons: Icons.email, lable: "Email id", Onchange: demo),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               MyTextField(
                   icons: Icons.password, lable: "Password", Onchange: demo),
-              SizedBox(height: 90),
+              const SizedBox(height: 90),
               MyButton(
                 icon: Icons.admin_panel_settings_rounded,
                 Btname: "LOGIN",
                 ontap: () {
-                  Get.offAll(MapPage());
+                  Get.offAll(const MapPage());
                 },
               ),
               // SizedBox(height: 20),

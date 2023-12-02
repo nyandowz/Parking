@@ -44,7 +44,7 @@ class BookingPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const Row(
                 children: [
                   Text(
@@ -56,11 +56,11 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              Divider(
+              const Divider(
                 thickness: 1,
                 color: blueColor,
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               const Row(
                 children: [
                   Text(
@@ -68,7 +68,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
@@ -88,7 +88,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 30),
+              const SizedBox(height: 30),
               const Row(
                 children: [
                   Text(
@@ -96,7 +96,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 children: [
                   Expanded(
@@ -116,7 +116,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               const Row(
                 children: [
                   Text(
@@ -124,7 +124,7 @@ class BookingPage extends StatelessWidget {
                   )
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
              Obx(() => Slider(
               mouseCursor: MouseCursor.defer,
                   thumbColor: blueColor,
@@ -148,7 +148,7 @@ class BookingPage extends StatelessWidget {
                   max: 60,
                 ),),
            const   Padding(
-                padding: const EdgeInsets.only(left: 10, right: 20),
+                padding: EdgeInsets.only(left: 10, right: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:  [
@@ -161,16 +161,16 @@ class BookingPage extends StatelessWidget {
                   ],
                 ),
               ),
-              SizedBox(height: 20),
-              Row(
+              const SizedBox(height: 20),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: const [
+                children: [
                   Text(
                     "Your Slot Name",
                   ),
                 ],
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -184,7 +184,7 @@ class BookingPage extends StatelessWidget {
                     child: Center(
                       child: Text(
                         slotName,
-                        style: TextStyle(
+                        style: const TextStyle(
                           fontSize: 30,
                           fontWeight: FontWeight.w700,
                           color: Colors.white,
@@ -194,27 +194,27 @@ class BookingPage extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 80),
+              const SizedBox(height: 80),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                     children: [
-                      Row(
+                      const Row(
                         children: [
                           Text("Amount to Be Pay"),
                         ],
                       ),
                       Row(
                         children: [
-                          Icon(
+                          const Icon(
                             Icons.currency_rupee,
                             size: 30,
                             color: blueColor,
                           ),
                          Obx(() => Text(
                               "${parkingController.parkingAmount.value}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
                                 color: blueColor,
@@ -231,12 +231,12 @@ class BookingPage extends StatelessWidget {
                     },
                     child: Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+                          const EdgeInsets.symmetric(horizontal: 60, vertical: 20),
                       decoration: BoxDecoration(
                         color: blueColor,
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      child: Text(
+                      child: const Text(
                         "PAY NOW",
                         style: TextStyle(
                           fontSize: 18,

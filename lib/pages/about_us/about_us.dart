@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:smart_car_parking/Data.dart';
 import 'package:smart_car_parking/config/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -12,7 +10,7 @@ class AboutUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: const IconThemeData(color: Colors.white),
         centerTitle: true,
         backgroundColor: blueColor,
         title: const Text(
@@ -47,9 +45,9 @@ class AboutUs extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 30),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Text(
                 LeaderName,
                 style: TextStyle(
@@ -59,9 +57,9 @@ class AboutUs extends StatelessWidget {
               ),
             ],
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
+            children: [
               Flexible(
                 child: Text(
                   bio,
